@@ -85,6 +85,7 @@
     </dependencyManagement>
 
     <repositories>
+        <!--
         <repository>
             <id>spring-snapshot</id>
             <name>Spring Snapshot Repository</name>
@@ -105,6 +106,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        -->
         <repository>
             <id>sonatype</id>
             <name>sonatype</name>

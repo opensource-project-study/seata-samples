@@ -125,6 +125,7 @@
     </dependencyManagement>
 
     <repositories>
+        <!--
         <repository>
             <id>mvnrepository</id>
             <name>mvnrepository</name>
@@ -137,6 +138,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        -->
         <repository>
             <id>sonatype</id>
             <name>sonatype</name>
