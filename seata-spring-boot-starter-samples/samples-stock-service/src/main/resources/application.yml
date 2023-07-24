@@ -21,12 +21,22 @@ dubbo:
     name: dubbo
     port: 20888
   registry:
-    id: dubbo-stock-example-registry
-    address: nacos://127.0.0.1:8848
+    id: dubbo-business-example-registry
+    address: 192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
+    protocol: zookeeper
   config-center:
-    address: nacos://127.0.0.1:8848
+    address: 192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
+    protocol: zookeeper
   metadata-report:
-    address: nacos://127.0.0.1:8848
+    address: 192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
+    protocol: zookeeper
+#  registry:
+#    id: dubbo-stock-example-registry
+#    address: nacos://127.0.0.1:8848
+#  config-center:
+#    address: nacos://127.0.0.1:8848
+#  metadata-report:
+#    address: nacos://127.0.0.1:8848
 #====================================mybatis-plus config===============================================
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*.xml
@@ -87,25 +97,41 @@ seata:
     serialization: seata
     compressor: none
     enable-client-batch-send-request: true # 客户端事务消息请求是否批量合并发送（默认true）
-  registry:
-    file:
-      name: file.conf
-    type: nacos
-    nacos:
-      server-addr: localhost:8848
-      namespace:
-      cluster: default
-      group: SEATA_GROUP
-      username: nacos
-      password: nacos
   config:
-    file:
-      name: file.conf
-    type: nacos
-    nacos:
-      namespace:
-      server-addr: localhost:8848
-      group: SEATA_GROUP
-      username: nacos
-      password: nacos
-      dataId: nacos-server.properties
+    # support: nacos, consul, apollo, zk, etcd3
+    type: apollo
+    apollo:
+      # FAT环境
+      # 跳过apollo-meta
+      apollo-config-service: http://192.168.3.129:18081
+      #apollo-meta: http://192.168.3.129:18081
+      app-id: seata-server
+      namespace: application
+      apollo-accesskey-secret: ""
+  registry:
+    # support: nacos, eureka, redis, zk, consul, etcd3, sofa
+    type: zk
+    zk:
+      server-addr: 192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
+#  registry:
+#    file:
+#      name: file.conf
+#    type: nacos
+#    nacos:
+#      server-addr: localhost:8848
+#      namespace:
+#      cluster: default
+#      group: SEATA_GROUP
+#      username: nacos
+#      password: nacos
+#  config:
+#    file:
+#      name: file.conf
+#    type: nacos
+#    nacos:
+#      namespace:
+#      server-addr: localhost:8848
+#      group: SEATA_GROUP
+#      username: nacos
+#      password: nacos
+#      dataId: nacos-server.properties

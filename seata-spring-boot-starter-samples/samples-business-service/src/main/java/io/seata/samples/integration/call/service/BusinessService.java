@@ -26,7 +26,7 @@ import io.seata.samples.integration.common.response.ObjectResponse;
 public interface BusinessService {
 
     /**
-     * 出处理业务服务
+     * 处理业务服务
      *
      * @param businessDTO
      * @return
@@ -34,7 +34,7 @@ public interface BusinessService {
     ObjectResponse handleBusiness(BusinessDTO businessDTO);
 
     /**
-     * 出处理业务服务，出现异常回顾
+     * 处理业务服务，出现异常回顾
      *
      * @param businessDTO
      * @return
