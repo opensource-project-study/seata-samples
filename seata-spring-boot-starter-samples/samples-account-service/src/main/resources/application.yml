@@ -48,6 +48,7 @@ mybatis-plus:
 seata:
   enabled: true
   application-id: business-seata-example
+  # 参考：https://seata.io/zh-cn/docs/user/configurations.html 附录1
   tx-service-group: my_test_tx_group # 事务群组（可以每个应用独立取名，也可以使用相同的名字）
   client:
     rm:
@@ -65,9 +66,12 @@ seata:
     undo:
       data-validation: true # 二阶段回滚镜像校验（默认true开启）
       log-serialization: jackson # undo序列化方式（默认jackson）
+      # SEATA AT 模式需要 UNDO_LOG 表，建表语句在seata项目script/client/at/db/目录下
+      # 每个业务数据库都要添加这个表
       log-table: undo_log  # 自定义undo表名（默认undo_log）
   service:
     vgroup-mapping:
+      # apollo中要配置相同的值，例如这里就要在apollo的namespace中添加一个配置：key为service.vgroupMapping.my_test_tx_group，value为default
       my_test_tx_group: default # TC 集群（必须与seata-server保持一致）
     enable-degrade: false # 降级开关
     disable-global-transaction: false # 禁用全局事务（默认false）
