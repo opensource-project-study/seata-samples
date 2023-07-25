@@ -6,8 +6,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.3.129:3326/seata3?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
-    username: root
-    password: 123456
+    username: yuwenbo
+    password: yuwenbo
   application:
     name: dubbo-stock-example
 
