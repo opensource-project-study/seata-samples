@@ -22,7 +22,7 @@
         <druid.version>1.1.10</druid.version>
 <!--        <mybatis.version>2.2.0</mybatis.version>-->
         <baomidou.mybatis.plus.version>3.4.0</baomidou.mybatis.plus.version>
-        <nacos.version>0.2.3</nacos.version>
+<!--        <nacos.version>0.2.3</nacos.version>-->
         <lombok.version>1.18.8</lombok.version>
         <!-- 2.7.15 无法识别服务 -->
         <dubbo.version>2.7.14</dubbo.version>
@@ -78,13 +78,11 @@
             <version>${dubbo.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-registry-nacos</artifactId>
-            <version>${dubbo.version}</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/io.seata/seata-all -->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.dubbo</groupId>-->
+<!--            <artifactId>dubbo-registry-nacos</artifactId>-->
+<!--            <version>${dubbo.version}</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>io.seata</groupId>
@@ -93,10 +91,16 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-client</artifactId>
-            <version>${nacos-client.verison}</version>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client</artifactId>
+            <version>2.1.0</version>
         </dependency>
+
+        <!--        <dependency>-->
+<!--            <groupId>com.alibaba.nacos</groupId>-->
+<!--            <artifactId>nacos-client</artifactId>-->
+<!--            <version>${nacos-client.verison}</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.projectlombok</groupId>
