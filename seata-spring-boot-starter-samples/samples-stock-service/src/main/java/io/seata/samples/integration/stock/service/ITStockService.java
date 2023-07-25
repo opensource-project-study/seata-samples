@@ -15,10 +15,11 @@
  */
 package io.seata.samples.integration.stock.service;
 
-import com.baomidou.mybatisplus.service.IService;
 import io.seata.samples.integration.common.dto.CommodityDTO;
 import io.seata.samples.integration.common.response.ObjectResponse;
 import io.seata.samples.integration.stock.entity.TStock;
+
+import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * 仓库服务

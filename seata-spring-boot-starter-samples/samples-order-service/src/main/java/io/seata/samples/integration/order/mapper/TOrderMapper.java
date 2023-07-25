@@ -15,9 +15,10 @@
  */
 package io.seata.samples.integration.order.mapper;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
 import io.seata.samples.integration.order.entity.TOrder;
 import org.apache.ibatis.annotations.Param;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
  * <p>

@@ -15,13 +15,14 @@
  */
 package io.seata.samples.integration.stock.service;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import io.seata.samples.integration.common.dto.CommodityDTO;
 import io.seata.samples.integration.common.enums.RspStatusEnum;
 import io.seata.samples.integration.common.response.ObjectResponse;
 import io.seata.samples.integration.stock.entity.TStock;
 import io.seata.samples.integration.stock.mapper.TStockMapper;
 import org.springframework.stereotype.Service;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 /**
  * <p>
