@@ -20,9 +20,7 @@
     <properties>
         <java.version>1.8</java.version>
         <druid.version>1.1.10</druid.version>
-<!--        <mybatis.version>2.2.0</mybatis.version>-->
         <baomidou.mybatis.plus.version>3.4.0</baomidou.mybatis.plus.version>
-<!--        <nacos.version>0.2.3</nacos.version>-->
         <lombok.version>1.18.8</lombok.version>
         <!-- 2.7.15 无法识别服务 -->
         <dubbo.version>2.7.14</dubbo.version>
@@ -37,6 +35,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
         </dependency>
 
         <dependency>
