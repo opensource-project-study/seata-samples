@@ -19,6 +19,10 @@
         , commodity_code, name, count
     </sql>
 
+    <select id="queryStockByUniqueKey" resultType="java.lang.Integer">
+        SELECT count from t_stock where commodity_code = #{commodityCode} FOR UPDATE
+    </select>
+
     <update id="decreaseStock">
         update t_stock
         set count = count - ${count}

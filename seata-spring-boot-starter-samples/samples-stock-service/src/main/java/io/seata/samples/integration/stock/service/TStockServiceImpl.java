@@ -21,7 +21,6 @@ import io.seata.samples.integration.common.response.ObjectResponse;
 import io.seata.samples.integration.stock.entity.TStock;
 import io.seata.samples.integration.stock.mapper.TStockMapper;
 import org.springframework.stereotype.Service;
-
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 /**
@@ -38,16 +37,18 @@ public class TStockServiceImpl extends ServiceImpl<TStockMapper, TStock> impleme
 
     @Override
     public ObjectResponse decreaseStock(CommodityDTO commodityDTO) {
-        int stock = baseMapper.decreaseStock(commodityDTO.getCommodityCode(), commodityDTO.getCount());
+        int stock = baseMapper.queryStockByUniqueKey(commodityDTO.getCommodityCode());
+        if (stock < commodityDTO.getCount()) {
+            return ObjectResponse.fail();
+        }
+        int ret = baseMapper.decreaseStock(commodityDTO.getCommodityCode(), commodityDTO.getCount());
         ObjectResponse<Object> response = new ObjectResponse<>();
-        if (stock > 0) {
+        if (ret > 0) {
             response.setStatus(RspStatusEnum.SUCCESS.getCode());
             response.setMessage(RspStatusEnum.SUCCESS.getMessage());
             return response;
         }
 
-        response.setStatus(RspStatusEnum.FAIL.getCode());
-        response.setMessage(RspStatusEnum.FAIL.getMessage());
-        return response;
+        return ObjectResponse.fail();
     }
 }

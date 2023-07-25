@@ -31,6 +31,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface TStockMapper extends BaseMapper<TStock> {
 
+    int queryStockByUniqueKey(@Param("commodityCode") String commodityCode);
+
     /**
      * 扣减商品库存
      *
