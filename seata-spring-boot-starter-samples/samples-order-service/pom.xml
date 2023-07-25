@@ -33,7 +33,6 @@
             <artifactId>samples-common-service</artifactId>
             <version>${parent.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>

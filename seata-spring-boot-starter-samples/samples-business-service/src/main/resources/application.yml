@@ -16,16 +16,13 @@ dubbo:
     port: 10001
   registry:
     id: dubbo-business-example-registry
-    address: 192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
-    protocol: zookeeper
+    address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
   #    address: nacos://127.0.0.1:8848
   config-center:
-    address: 192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
-    protocol: zookeeper
+    address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
 #    address: nacos://127.0.0.1:8848
   metadata-report:
-    address: 192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
-    protocol: zookeeper
+    address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
 #    address: nacos://127.0.0.1:8848
 #====================================Seata Config===============================================
 # 配置参考：https://seata.io/zh-cn/docs/user/configurations.html

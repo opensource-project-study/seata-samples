@@ -22,15 +22,12 @@ dubbo:
     name: dubbo
     port: 20880
   registry:
-    id: dubbo-business-example-registry
-    address: 192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
-    protocol: zookeeper
+    id: dubbo-order-example-registry
+    address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
   config-center:
-    address: 192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
-    protocol: zookeeper
+    address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
   metadata-report:
-    address: 192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
-    protocol: zookeeper
+    address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
 
 #====================================mybatis-plus config===============================================
 mybatis-plus:
