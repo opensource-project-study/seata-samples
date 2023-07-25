@@ -47,7 +47,7 @@ mybatis-plus:
 #====================================Seata Config===============================================
 seata:
   enabled: true
-  application-id: business-seata-example
+  application-id: account-seata-example
   # 参考：https://seata.io/zh-cn/docs/user/configurations.html 附录1
   tx-service-group: my_test_tx_group # 事务群组（可以每个应用独立取名，也可以使用相同的名字）
   client:
