@@ -11,4 +11,4 @@ CREATE TABLE IF NOT EXISTS `t_stock` (
     UNIQUE KEY `commodity_code` (`commodity_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='库存表';
 
-INSERT INTO `t_stock`(commodity_code,name,count) VALUES ('good001', '图书', 1000);
+INSERT INTO `t_stock`(commodity_code,name,count) VALUES ('C001', '图书', 1000);
