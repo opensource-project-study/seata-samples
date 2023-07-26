@@ -21,7 +21,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "io.seata.samples.integration.stock")
-@MapperScan({"io.seata.samples.integration.stock.mapper"})
+@MapperScan({"io.seata.samples.integration.stock.springboot.mapper"})
 @EnableDubbo(scanBasePackages = "io.seata.samples.integration.stock")
 public class StockExampleApplication {
 

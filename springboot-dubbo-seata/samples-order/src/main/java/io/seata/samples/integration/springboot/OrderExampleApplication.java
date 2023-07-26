@@ -21,7 +21,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "io.seata.samples.integration.order")
-@MapperScan({"io.seata.samples.integration.order.mapper"})
+@MapperScan({"io.seata.samples.integration.order.springboot.mapper"})
 @EnableDubbo(scanBasePackages = "io.seata.samples.integration.order")
 public class OrderExampleApplication {
 

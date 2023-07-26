@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication(scanBasePackages = "io.seata.samples.integration.account")
 @EnableTransactionManagement
-@MapperScan({"io.seata.samples.integration.account.mapper"})
+@MapperScan({"io.seata.samples.integration.account.springboot.mapper"})
 @EnableDubbo(scanBasePackages = "io.seata.samples.integration.account")
 public class AccountExampleApplication {
 
