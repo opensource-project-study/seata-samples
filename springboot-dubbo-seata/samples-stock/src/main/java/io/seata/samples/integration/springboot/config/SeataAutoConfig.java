@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.order.config;
+package io.seata.samples.integration.springboot.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 
@@ -106,6 +106,6 @@ public class SeataAutoConfig {
      */
     @Bean
     public GlobalTransactionScanner globalTransactionScanner() {
-        return new GlobalTransactionScanner("order-gts-seata-example", "my_test_tx_group");
+        return new GlobalTransactionScanner("stock-gts-seata-example", "my_test_tx_group");
     }
 }

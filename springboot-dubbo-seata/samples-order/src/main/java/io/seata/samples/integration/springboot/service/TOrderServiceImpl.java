@@ -13,22 +13,23 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.order.service;
+package io.seata.samples.integration.springboot.service;
 
 import java.util.UUID;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import io.seata.samples.integration.common.dto.AccountDTO;
 import io.seata.samples.integration.common.dto.OrderDTO;
 import io.seata.samples.integration.common.dubbo.AccountDubboService;
 import io.seata.samples.integration.common.enums.RspStatusEnum;
 import io.seata.samples.integration.common.response.ObjectResponse;
-import io.seata.samples.integration.order.entity.TOrder;
-import io.seata.samples.integration.order.mapper.TOrderMapper;
+import io.seata.samples.integration.springboot.entity.TOrder;
+import io.seata.samples.integration.springboot.mapper.TOrderMapper;
+
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 /**
  * <p>
@@ -41,7 +42,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TOrderServiceImpl extends ServiceImpl<TOrderMapper, TOrder> implements ITOrderService {
 
-    @Reference(version = "1.0.0")
+    @DubboReference(version = "1.0.0")
     private AccountDubboService accountDubboService;
 
     /**

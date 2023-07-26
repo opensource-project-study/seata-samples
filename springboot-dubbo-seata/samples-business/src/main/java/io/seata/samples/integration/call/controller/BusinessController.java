@@ -53,4 +53,16 @@ public class BusinessController {
         LOGGER.info("请求参数：{}", businessDTO.toString());
         return businessService.handleBusiness(businessDTO);
     }
+
+    /**
+     * 模拟全局回滚
+     *
+     * @Param:
+     * @Return:
+     */
+    @PostMapping("/buy2")
+    ObjectResponse handleBusiness2(@RequestBody BusinessDTO businessDTO) {
+        LOGGER.info("请求参数：{}", businessDTO.toString());
+        return businessService.handleBusiness(businessDTO);
+    }
 }

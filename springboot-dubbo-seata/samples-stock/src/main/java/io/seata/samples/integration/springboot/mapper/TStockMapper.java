@@ -13,23 +13,30 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.stock.service;
+package io.seata.samples.integration.springboot.mapper;
 
-import com.baomidou.mybatisplus.service.IService;
-import io.seata.samples.integration.common.dto.CommodityDTO;
-import io.seata.samples.integration.common.response.ObjectResponse;
-import io.seata.samples.integration.stock.entity.TStock;
+import io.seata.samples.integration.springboot.entity.TStock;
+import org.apache.ibatis.annotations.Param;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
- * 仓库服务
+ * <p>
+ * Mapper 接口
+ * </p>
  *
  * @author heshouyou
  * @since 2019-01-13
  */
-public interface ITStockService extends IService<TStock> {
+public interface TStockMapper extends BaseMapper<TStock> {
+
+    int queryStockByUniqueKey(@Param("commodityCode") String commodityCode);
 
     /**
-     * 扣减库存
+     * 扣减商品库存
+     *
+     * @Param: commodityCode 商品code  count扣减数量
+     * @Return:
      */
-    ObjectResponse decreaseStock(CommodityDTO commodityDTO);
+    int decreaseStock(@Param("commodityCode") String commodityCode, @Param("count") Integer count);
 }

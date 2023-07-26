@@ -13,42 +13,32 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.order.controller;
+package io.seata.samples.integration.springboot.dubbo;
 
+import com.alibaba.dubbo.config.annotation.Service;
+
+import io.seata.core.context.RootContext;
 import io.seata.samples.integration.common.dto.OrderDTO;
+import io.seata.samples.integration.common.dubbo.OrderDubboService;
 import io.seata.samples.integration.common.response.ObjectResponse;
-import io.seata.samples.integration.order.service.ITOrderService;
-import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import io.seata.samples.integration.springboot.service.ITOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
- * <p>
- * 订单服务
- * </p>
- *
- * @author heshouyou
- * @since 2019-01-13
+ * @Author: heshouyou
+ * @Description
+ * @Date Created in 2019/1/23 15:59
  */
-@RestController
-@RequestMapping("/order")
-@Slf4j
-public class TOrderController {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(TOrderController.class);
+@Service(version = "1.0.0", protocol = "${dubbo.protocol.id}", application = "${dubbo.application.id}",
+    registry = "${dubbo.registry.id}", timeout = 3000)
+public class OrderDubboServiceImpl implements OrderDubboService {
 
     @Autowired
     private ITOrderService orderService;
 
-    @PostMapping("/create_order")
-    ObjectResponse<OrderDTO> createOrder(@RequestBody OrderDTO orderDTO) {
-        LOGGER.info("请求订单微服务：{}", orderDTO.toString());
+    @Override
+    public ObjectResponse<OrderDTO> createOrder(OrderDTO orderDTO) {
+        System.out.println("全局事务id ：" + RootContext.getXID());
         return orderService.createOrder(orderDTO);
     }
 }
-

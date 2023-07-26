@@ -13,11 +13,12 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.stock.mapper;
+package io.seata.samples.integration.springboot.mapper;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
-import io.seata.samples.integration.stock.entity.TStock;
+import io.seata.samples.integration.springboot.entity.TOrder;
 import org.apache.ibatis.annotations.Param;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
  * <p>
@@ -27,13 +28,13 @@ import org.apache.ibatis.annotations.Param;
  * @author heshouyou
  * @since 2019-01-13
  */
-public interface TStockMapper extends BaseMapper<TStock> {
+public interface TOrderMapper extends BaseMapper<TOrder> {
 
     /**
-     * 扣减商品库存
+     * 创建订单
      *
-     * @Param: commodityCode 商品code  count扣减数量
+     * @Param: order 订单信息
      * @Return:
      */
-    int decreaseStock(@Param("commodityCode") String commodityCode, @Param("count") Integer count);
+    void createOrder(@Param("order") TOrder order);
 }

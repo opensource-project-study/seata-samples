@@ -13,27 +13,24 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.order.mapper;
+package io.seata.samples.integration.springboot.service;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
-import io.seata.samples.integration.order.entity.TOrder;
-import org.apache.ibatis.annotations.Param;
+import io.seata.samples.integration.common.dto.CommodityDTO;
+import io.seata.samples.integration.common.response.ObjectResponse;
+import io.seata.samples.integration.springboot.entity.TStock;
+
+import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- * Mapper 接口
- * </p>
+ * 仓库服务
  *
  * @author heshouyou
  * @since 2019-01-13
  */
-public interface TOrderMapper extends BaseMapper<TOrder> {
+public interface ITStockService extends IService<TStock> {
 
     /**
-     * 创建订单
-     *
-     * @Param: order 订单信息
-     * @Return:
+     * 扣减库存
      */
-    void createOrder(@Param("order") TOrder order);
+    ObjectResponse decreaseStock(CommodityDTO commodityDTO);
 }

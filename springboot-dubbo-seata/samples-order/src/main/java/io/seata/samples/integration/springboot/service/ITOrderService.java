@@ -13,12 +13,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.order.service;
+package io.seata.samples.integration.springboot.service;
 
-import com.baomidou.mybatisplus.service.IService;
 import io.seata.samples.integration.common.dto.OrderDTO;
 import io.seata.samples.integration.common.response.ObjectResponse;
-import io.seata.samples.integration.order.entity.TOrder;
+import io.seata.samples.integration.springboot.entity.TOrder;
+
+import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>

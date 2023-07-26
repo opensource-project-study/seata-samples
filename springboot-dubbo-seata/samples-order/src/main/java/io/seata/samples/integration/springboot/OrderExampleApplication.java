@@ -13,17 +13,14 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.order;
+package io.seata.samples.integration.springboot;
 
-import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
-
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication(scanBasePackages = "io.seata.samples.integration.order")
-@EnableDiscoveryClient
 @MapperScan({"io.seata.samples.integration.order.mapper"})
 @EnableDubbo(scanBasePackages = "io.seata.samples.integration.order")
 public class OrderExampleApplication {

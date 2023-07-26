@@ -13,15 +13,17 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.stock.service;
+package io.seata.samples.integration.springboot.service;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import io.seata.samples.integration.common.dto.CommodityDTO;
 import io.seata.samples.integration.common.enums.RspStatusEnum;
 import io.seata.samples.integration.common.response.ObjectResponse;
-import io.seata.samples.integration.stock.entity.TStock;
-import io.seata.samples.integration.stock.mapper.TStockMapper;
+import io.seata.samples.integration.springboot.entity.TStock;
+import io.seata.samples.integration.springboot.mapper.TStockMapper;
+
 import org.springframework.stereotype.Service;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 /**
  * <p>
@@ -36,16 +38,18 @@ public class TStockServiceImpl extends ServiceImpl<TStockMapper, TStock> impleme
 
     @Override
     public ObjectResponse decreaseStock(CommodityDTO commodityDTO) {
-        int stock = baseMapper.decreaseStock(commodityDTO.getCommodityCode(), commodityDTO.getCount());
+        int stock = baseMapper.queryStockByUniqueKey(commodityDTO.getCommodityCode());
+        if (stock < commodityDTO.getCount()) {
+            return ObjectResponse.fail();
+        }
+        int ret = baseMapper.decreaseStock(commodityDTO.getCommodityCode(), commodityDTO.getCount());
         ObjectResponse<Object> response = new ObjectResponse<>();
-        if (stock > 0) {
+        if (ret > 0) {
             response.setStatus(RspStatusEnum.SUCCESS.getCode());
             response.setMessage(RspStatusEnum.SUCCESS.getMessage());
             return response;
         }
 
-        response.setStatus(RspStatusEnum.FAIL.getCode());
-        response.setMessage(RspStatusEnum.FAIL.getMessage());
-        return response;
+        return ObjectResponse.fail();
     }
 }
