@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.account.config;
+package io.seata.samples.integration.springboot.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 
@@ -98,7 +98,7 @@ public class SeataAutoConfig {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSourceProxy);
         factoryBean.setMapperLocations(
-            new PathMatchingResourcePatternResolver().getResources("classpath*:/mapper/*.xml"));
+            new PathMatchingResourcePatternResolver().getResources("classpath:/mapper/*.xml"));
         factoryBean.setTransactionFactory(new SpringManagedTransactionFactory());
         return factoryBean.getObject();
     }

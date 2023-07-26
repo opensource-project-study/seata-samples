@@ -13,9 +13,9 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.account.service;
+package io.seata.samples.integration.springboot.service;
 
-import io.seata.samples.integration.account.entity.TAccount;
+import io.seata.samples.integration.springboot.entity.TAccount;
 import io.seata.samples.integration.common.dto.AccountDTO;
 import io.seata.samples.integration.common.response.ObjectResponse;
 
@@ -36,5 +36,5 @@ public interface ITAccountService extends IService<TAccount> {
      */
     ObjectResponse decreaseAccount(AccountDTO accountDTO);
 
-    void testGlobalLock();
+//    void testGlobalLock();
 }

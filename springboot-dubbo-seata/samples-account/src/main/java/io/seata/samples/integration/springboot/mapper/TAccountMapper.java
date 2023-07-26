@@ -13,9 +13,9 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.account.mapper;
+package io.seata.samples.integration.springboot.mapper;
 
-import io.seata.samples.integration.account.entity.TAccount;
+import io.seata.samples.integration.springboot.entity.TAccount;
 import org.apache.ibatis.annotations.Param;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -30,7 +30,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface TAccountMapper extends BaseMapper<TAccount> {
 
+    int queryBalanceByUserId(@Param("userId") String userId);
+
     int decreaseAccount(@Param("userId") String userId, @Param("amount") Double amount);
 
-    int testGlobalLock(@Param("userId") String userId);
 }

@@ -13,14 +13,14 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.account.service;
+package io.seata.samples.integration.springboot.service;
 
-import io.seata.samples.integration.account.entity.TAccount;
-import io.seata.samples.integration.account.mapper.TAccountMapper;
+import io.seata.samples.integration.springboot.entity.TAccount;
+import io.seata.samples.integration.springboot.mapper.TAccountMapper;
 import io.seata.samples.integration.common.dto.AccountDTO;
 import io.seata.samples.integration.common.enums.RspStatusEnum;
 import io.seata.samples.integration.common.response.ObjectResponse;
-import io.seata.spring.annotation.GlobalLock;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,25 +38,28 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 public class TAccountServiceImpl extends ServiceImpl<TAccountMapper, TAccount> implements ITAccountService {
 
     @Override
+    @Transactional
     public ObjectResponse decreaseAccount(AccountDTO accountDTO) {
-        int account = baseMapper.decreaseAccount(accountDTO.getUserId(), accountDTO.getAmount().doubleValue());
+        double balance = baseMapper.queryBalanceByUserId(accountDTO.getUserId());
+        if (balance < accountDTO.getAmount().doubleValue()) {
+            return ObjectResponse.fail();
+        }
+        int ret = baseMapper.decreaseAccount(accountDTO.getUserId(), accountDTO.getAmount().doubleValue());
         ObjectResponse<Object> response = new ObjectResponse<>();
-        if (account > 0) {
+        if (ret > 0) {
             response.setStatus(RspStatusEnum.SUCCESS.getCode());
             response.setMessage(RspStatusEnum.SUCCESS.getMessage());
             return response;
         }
 
-        response.setStatus(RspStatusEnum.FAIL.getCode());
-        response.setMessage(RspStatusEnum.FAIL.getMessage());
-        return response;
+        return ObjectResponse.fail();
     }
 
-    @Override
-    @GlobalLock
-    @Transactional(rollbackFor = {Throwable.class})
-    public void testGlobalLock() {
-        baseMapper.testGlobalLock("1");
-        System.out.println("Hi, i got lock, i will do some thing with holding this lock.");
-    }
+//    @Override
+//    @GlobalLock
+//    @Transactional(rollbackFor = {Throwable.class})
+//    public void testGlobalLock() {
+//        baseMapper.testGlobalLock("1");
+//        System.out.println("Hi, i got lock, i will do some thing with holding this lock.");
+//    }
 }

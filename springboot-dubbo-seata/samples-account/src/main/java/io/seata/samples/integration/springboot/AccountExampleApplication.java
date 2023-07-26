@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package io.seata.samples.integration.account;
+package io.seata.samples.integration.springboot;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 

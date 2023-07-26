@@ -17,6 +17,8 @@ package io.seata.samples.integration.common.response;
 
 import java.io.Serializable;
 
+import io.seata.samples.integration.common.enums.RspStatusEnum;
+
 /**
  * @author: heshouyou
  * @date: 2018-07-03 16:55
@@ -30,5 +32,12 @@ public class ObjectResponse<T> extends BaseResponse implements Serializable {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    public static ObjectResponse<Object> fail() {
+        ObjectResponse<Object> response = new ObjectResponse<>();
+        response.setStatus(RspStatusEnum.FAIL.getCode());
+        response.setMessage(RspStatusEnum.FAIL.getMessage());
+        return response;
     }
 }
