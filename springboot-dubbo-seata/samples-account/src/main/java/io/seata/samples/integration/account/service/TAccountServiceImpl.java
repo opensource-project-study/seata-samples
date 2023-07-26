@@ -15,7 +15,6 @@
  */
 package io.seata.samples.integration.account.service;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import io.seata.samples.integration.account.entity.TAccount;
 import io.seata.samples.integration.account.mapper.TAccountMapper;
 import io.seata.samples.integration.common.dto.AccountDTO;
@@ -24,6 +23,8 @@ import io.seata.samples.integration.common.response.ObjectResponse;
 import io.seata.spring.annotation.GlobalLock;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 /**
  * <p>

@@ -27,13 +27,6 @@
     <artifactId>samples-common</artifactId>
     <name>samples-common ${project.version}</name>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-    </dependencies>
-
     <build>
         <plugins>
             <plugin>
