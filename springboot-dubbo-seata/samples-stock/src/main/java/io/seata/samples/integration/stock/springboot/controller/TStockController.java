@@ -17,7 +17,7 @@ package io.seata.samples.integration.stock.springboot.controller;
 
 import io.seata.samples.integration.common.springboot.dto.CommodityDTO;
 import io.seata.samples.integration.common.springboot.response.ObjectResponse;
-import io.seata.samples.integration.springboot.service.ITStockService;
+import io.seata.samples.integration.stock.springboot.service.ITStockService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
