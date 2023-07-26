@@ -15,9 +15,9 @@
  */
 package io.seata.samples.integration.common.springboot.aop;
 
-import io.seata.samples.integration.common.enums.RspStatusEnum;
-import io.seata.samples.integration.common.exception.DefaultException;
-import io.seata.samples.integration.common.response.ObjectResponse;
+import io.seata.samples.integration.common.springboot.enums.RspStatusEnum;
+import io.seata.samples.integration.common.springboot.exception.DefaultException;
+import io.seata.samples.integration.common.springboot.response.ObjectResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

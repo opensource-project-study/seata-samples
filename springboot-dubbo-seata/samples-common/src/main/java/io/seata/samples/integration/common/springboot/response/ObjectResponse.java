@@ -17,7 +17,7 @@ package io.seata.samples.integration.common.springboot.response;
 
 import java.io.Serializable;
 
-import io.seata.samples.integration.common.enums.RspStatusEnum;
+import io.seata.samples.integration.common.springboot.enums.RspStatusEnum;
 
 /**
  * @author: heshouyou
