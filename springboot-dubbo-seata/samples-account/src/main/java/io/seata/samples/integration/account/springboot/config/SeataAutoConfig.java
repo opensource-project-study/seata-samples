@@ -15,6 +15,8 @@
  */
 package io.seata.samples.integration.account.springboot.config;
 
+import javax.sql.DataSource;
+
 import com.alibaba.druid.pool.DruidDataSource;
 
 import io.seata.rm.datasource.DataSourceProxy;
@@ -83,7 +85,7 @@ public class SeataAutoConfig {
     }
 
     @Bean
-    public DataSourceTransactionManager transactionManager(DataSourceProxy dataSourceProxy) {
+    public DataSourceTransactionManager transactionManager(DataSource dataSourceProxy) {
         return new DataSourceTransactionManager(dataSourceProxy);
     }
 
@@ -94,7 +96,7 @@ public class SeataAutoConfig {
      * @Return: DataSourceProxy  datasource proxy
      */
     @Bean
-    public SqlSessionFactory sqlSessionFactory(DataSourceProxy dataSourceProxy) throws Exception {
+    public SqlSessionFactory sqlSessionFactory(DataSource dataSourceProxy) throws Exception {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSourceProxy);
         factoryBean.setMapperLocations(

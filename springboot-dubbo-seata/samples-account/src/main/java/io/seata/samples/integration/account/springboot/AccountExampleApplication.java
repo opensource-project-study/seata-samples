@@ -21,10 +21,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@SpringBootApplication(scanBasePackages = "io.seata.samples.integration.account")
+@SpringBootApplication(scanBasePackages = "io.seata.samples.integration.account.springboot")
 @EnableTransactionManagement
 @MapperScan({"io.seata.samples.integration.account.springboot.mapper"})
-@EnableDubbo(scanBasePackages = "io.seata.samples.integration.account")
+@EnableDubbo(scanBasePackages = "io.seata.samples.integration.account.springboot")
 public class AccountExampleApplication {
 
     public static void main(String[] args) {
