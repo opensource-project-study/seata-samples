@@ -7,6 +7,7 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/db_account?useSSL=false&serverTimezone=UTC
     username: root
     password: 123456
+#====================================Seata Config===============================================
 seata:
   enabled: true
   application-id: account-service
@@ -30,8 +31,8 @@ seata:
       data-validation: true
       log-serialization: jackson
       log-table: undo_log
-    log:
-      exceptionRate: 100
+#    log:
+#      exceptionRate: 100
   service:
     vgroup-mapping:
       my_test_tx_group: default
@@ -59,59 +60,75 @@ seata:
     compressor: none
     enable-client-batch-send-request: true
   config:
-    type: file
-    consul:
-      server-addr: 127.0.0.1:8500
+    # support: nacos, consul, apollo, zk, etcd3
+    type: apollo
     apollo:
-      apollo-meta: http://192.168.1.204:8801
+      # FAT环境
+      # 跳过apollo-meta
+      apollo-config-service: http://192.168.3.129:18081
+      #apollo-meta: http://192.168.3.129:18081
       app-id: seata-server
       namespace: application
-    etcd3:
-      server-addr: http://localhost:2379
-    nacos:
-      namespace:
-      serverAddr: localhost
-      group: SEATA_GROUP
-    zk:
-      server-addr: 127.0.0.1:2181
-      session-timeout: 6000
-      connect-timeout: 2000
-      username: ""
-      password: ""
+      apollo-accesskey-secret: ""
   registry:
-    type: file
-    consul:
-      cluster: default
-      server-addr: 127.0.0.1:8500
-    etcd3:
-      cluster: default
-      serverAddr: http://localhost:2379
-    eureka:
-      application: default
-      weight: 1
-      service-url: http://localhost:8761/eureka
-    nacos:
-      cluster: default
-      server-addr: localhost
-      namespace:
-    redis:
-      server-addr: localhost:6379
-      db: 0
-      password:
-      cluster: default
-      timeout: 0
-    sofa:
-      server-addr: 127.0.0.1:9603
-      application: default
-      region: DEFAULT_ZONE
-      datacenter: DefaultDataCenter
-      cluster: default
-      group: SEATA_GROUP
-      addressWaitTime: 3000
+    # support: nacos, eureka, redis, zk, consul, etcd3, sofa
+    type: zk
     zk:
-      cluster: default
-      server-addr: 127.0.0.1:2181
-      session-timeout: 6000
-      connect-timeout: 2000
-      username: ""
-      password: ""
+      server-addr: 192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
+#  config:
+#    type: file
+#    consul:
+#      server-addr: 127.0.0.1:8500
+#    apollo:
+#      apollo-meta: http://192.168.1.204:8801
+#      app-id: seata-server
+#      namespace: application
+#    etcd3:
+#      server-addr: http://localhost:2379
+#    nacos:
+#      namespace:
+#      serverAddr: localhost
+#      group: SEATA_GROUP
+#    zk:
+#      server-addr: 127.0.0.1:2181
+#      session-timeout: 6000
+#      connect-timeout: 2000
+#      username: ""
+#      password: ""
+#  registry:
+#    type: file
+#    consul:
+#      cluster: default
+#      server-addr: 127.0.0.1:8500
+#    etcd3:
+#      cluster: default
+#      serverAddr: http://localhost:2379
+#    eureka:
+#      application: default
+#      weight: 1
+#      service-url: http://localhost:8761/eureka
+#    nacos:
+#      cluster: default
+#      server-addr: localhost
+#      namespace:
+#    redis:
+#      server-addr: localhost:6379
+#      db: 0
+#      password:
+#      cluster: default
+#      timeout: 0
+#    sofa:
+#      server-addr: 127.0.0.1:9603
+#      application: default
+#      region: DEFAULT_ZONE
+#      datacenter: DefaultDataCenter
+#      cluster: default
+#      group: SEATA_GROUP
+#      addressWaitTime: 3000
+#    zk:
+#      cluster: default
+#      server-addr: 127.0.0.1:2181
+#      session-timeout: 6000
+#      connect-timeout: 2000
+#      username: ""
+#      password: ""

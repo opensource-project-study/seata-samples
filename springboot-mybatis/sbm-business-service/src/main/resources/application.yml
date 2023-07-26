@@ -23,8 +23,8 @@ seata:
       data-validation: true
       log-serialization: jackson
       log-table: undo_log
-    log:
-      exceptionRate: 100
+#    log:
+#      exceptionRate: 100
   service:
     vgroup-mapping:
       my_test_tx_group: default
