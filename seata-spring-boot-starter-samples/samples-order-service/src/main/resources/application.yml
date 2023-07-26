@@ -11,6 +11,16 @@ spring:
   application:
     name: dubbo-order-example
 
+#====================================mybatis-plus config===============================================
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  typeAliasesPackage: io.seata.samples.integration.*.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+
 #====================================Dubbo config===============================================
 dubbo:
   application:
@@ -28,16 +38,6 @@ dubbo:
     address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
   metadata-report:
     address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
-
-#====================================mybatis-plus config===============================================
-mybatis-plus:
-  mapper-locations: classpath:/mapper/*.xml
-  typeAliasesPackage: io.seata.samples.integration.*.entity
-  configuration:
-    map-underscore-to-camel-case: true
-  global-config:
-    db-config:
-      id-type: auto
 
 #====================================Seata Config===============================================
 seata:
