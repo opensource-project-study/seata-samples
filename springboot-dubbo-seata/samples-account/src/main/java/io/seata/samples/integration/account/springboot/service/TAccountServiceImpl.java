@@ -17,9 +17,9 @@ package io.seata.samples.integration.account.springboot.service;
 
 import io.seata.samples.integration.account.springboot.entity.TAccount;
 import io.seata.samples.integration.account.springboot.mapper.TAccountMapper;
-import io.seata.samples.integration.common.dto.AccountDTO;
-import io.seata.samples.integration.common.enums.RspStatusEnum;
-import io.seata.samples.integration.common.response.ObjectResponse;
+import io.seata.samples.integration.common.springboot.dto.AccountDTO;
+import io.seata.samples.integration.common.springboot.enums.RspStatusEnum;
+import io.seata.samples.integration.common.springboot.response.ObjectResponse;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

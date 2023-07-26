@@ -16,10 +16,10 @@
 package io.seata.samples.integration.account.springboot.dubbo;
 
 import io.seata.core.context.RootContext;
-import io.seata.samples.integration.springboot.service.ITAccountService;
-import io.seata.samples.integration.common.dto.AccountDTO;
-import io.seata.samples.integration.common.dubbo.AccountDubboService;
-import io.seata.samples.integration.common.response.ObjectResponse;
+import io.seata.samples.integration.account.springboot.service.ITAccountService;
+import io.seata.samples.integration.common.springboot.dto.AccountDTO;
+import io.seata.samples.integration.common.springboot.dubbo.AccountDubboService;
+import io.seata.samples.integration.common.springboot.response.ObjectResponse;
 
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;

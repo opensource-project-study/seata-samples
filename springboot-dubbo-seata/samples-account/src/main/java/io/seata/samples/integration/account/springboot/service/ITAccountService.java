@@ -16,8 +16,8 @@
 package io.seata.samples.integration.account.springboot.service;
 
 import io.seata.samples.integration.account.springboot.entity.TAccount;
-import io.seata.samples.integration.common.dto.AccountDTO;
-import io.seata.samples.integration.common.response.ObjectResponse;
+import io.seata.samples.integration.common.springboot.dto.AccountDTO;
+import io.seata.samples.integration.common.springboot.response.ObjectResponse;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 
