@@ -17,7 +17,7 @@ package io.seata.samples.integration.order.springboot.controller;
 
 import io.seata.samples.integration.common.springboot.dto.OrderDTO;
 import io.seata.samples.integration.common.springboot.response.ObjectResponse;
-import io.seata.samples.integration.springboot.service.ITOrderService;
+import io.seata.samples.integration.order.springboot.service.ITOrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
