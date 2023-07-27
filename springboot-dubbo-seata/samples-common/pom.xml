@@ -25,7 +25,7 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
     <artifactId>samples-common</artifactId>
-    <name>samples-common ${project.version}</name>
+    <name>samples-common ${parent.version}</name>
 
     <build>
         <plugins>

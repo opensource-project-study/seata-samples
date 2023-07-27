@@ -25,7 +25,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>samples-account</artifactId>
     <packaging>jar</packaging>
-    <name>samples-account ${project.version}</name>
+    <name>samples-account ${parent.version}</name>
 
     <dependencies>
         <dependency>
