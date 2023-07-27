@@ -16,14 +16,14 @@
 package io.seata.samples.integration.call.springboot.service;
 
 import io.seata.core.context.RootContext;
-import io.seata.samples.integration.common.dto.BusinessDTO;
-import io.seata.samples.integration.common.dto.CommodityDTO;
-import io.seata.samples.integration.common.dto.OrderDTO;
-import io.seata.samples.integration.common.dubbo.OrderDubboService;
-import io.seata.samples.integration.common.dubbo.StockDubboService;
-import io.seata.samples.integration.common.enums.RspStatusEnum;
-import io.seata.samples.integration.common.exception.DefaultException;
-import io.seata.samples.integration.common.response.ObjectResponse;
+import io.seata.samples.integration.common.springboot.dto.BusinessDTO;
+import io.seata.samples.integration.common.springboot.dto.CommodityDTO;
+import io.seata.samples.integration.common.springboot.dto.OrderDTO;
+import io.seata.samples.integration.common.springboot.dubbo.OrderDubboService;
+import io.seata.samples.integration.common.springboot.dubbo.StockDubboService;
+import io.seata.samples.integration.common.springboot.enums.RspStatusEnum;
+import io.seata.samples.integration.common.springboot.exception.DefaultException;
+import io.seata.samples.integration.common.springboot.response.ObjectResponse;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;

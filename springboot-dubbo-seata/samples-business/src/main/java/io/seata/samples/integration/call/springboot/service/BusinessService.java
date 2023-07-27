@@ -15,8 +15,8 @@
  */
 package io.seata.samples.integration.call.springboot.service;
 
-import io.seata.samples.integration.common.dto.BusinessDTO;
-import io.seata.samples.integration.common.response.ObjectResponse;
+import io.seata.samples.integration.common.springboot.dto.BusinessDTO;
+import io.seata.samples.integration.common.springboot.response.ObjectResponse;
 
 /**
  * @Author: heshouyou
