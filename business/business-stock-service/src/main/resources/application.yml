@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.3.129:3326/seata1?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    url: jdbc:mysql://192.168.3.129:3326/seata3?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
     username: yuwenbo
     password: yuwenbo
   application:
@@ -13,7 +13,7 @@ spring:
 #====================================mybatis config===============================================
 mybatis:
   mapper-locations: classpath:/mapper/*.xml
-  typeAliasesPackage: io.seata.samples.integration.*.bean
+  typeAliasesPackage: io.seata.samples.integration.**.bean
   configuration:
     map-underscore-to-camel-case: true
 
