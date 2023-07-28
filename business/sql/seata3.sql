@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `stock` (
     UNIQUE KEY `commodity_code` (`commodity_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='库存表';
 
-INSERT INTO `t_stock`(commodity_code,name,count) VALUES ('C001', '图书', 1000);
+INSERT INTO `stock`(commodity_code,name,count) VALUES ('C001', '图书', 1000);
 
 CREATE TABLE IF NOT EXISTS `undo_log` (
     `branch_id` bigint(20) NOT NULL COMMENT 'branch transaction id',

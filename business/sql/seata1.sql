@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `account` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='账户表';
 
-INSERT INTO `t_account`(user_id,amount) VALUES ('1', 4000);
+INSERT INTO `account`(user_id,amount) VALUES ('1', 4000);
 
 CREATE TABLE IF NOT EXISTS `undo_log` (
                             `branch_id` bigint(20) NOT NULL COMMENT 'branch transaction id',
