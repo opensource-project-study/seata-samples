@@ -1,8 +1,6 @@
 package io.seata.samples.integration.business.common.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-
 import lombok.Data;
 
 /**
@@ -18,5 +16,5 @@ public class OrderParam implements Serializable {
     private String userId;
     private String commodityCode;
     private Integer orderCount;
-    private int orderAmount;
+    private Integer orderAmount;
 }

@@ -14,5 +14,5 @@ public class Order {
     private String userId;
     private String commodityCode;
     private Integer count;
-    private Double amount;
+    private Integer amount;
 }
