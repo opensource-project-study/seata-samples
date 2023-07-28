@@ -1,5 +1,5 @@
 server:
-  port: 8101
+  port: 8103
 #====================================MySQL=============================================
 spring:
   datasource:
@@ -8,7 +8,7 @@ spring:
     username: yuwenbo
     password: yuwenbo
   application:
-    name: business-account-service
+    name: business-stock-service
 
 #====================================mybatis config===============================================
 mybatis:
@@ -20,15 +20,15 @@ mybatis:
 #====================================Dubbo config===============================================
 dubbo:
   application:
-    id: business-account-service
-    name: business-account-service
+    id: business-stock-service
+    name: business-stock-service
     qosEnable: false
   protocol:
     id: dubbo
     name: dubbo
-    port: 20881
+    port: 20883
   registry:
-    id: business-account-service
+    id: business-stock-service
     address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
   config-center:
     address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
@@ -43,7 +43,7 @@ dubbo:
 #====================================Seata Config===============================================
 seata:
   enabled: true
-  application-id: business-account-service
+  application-id: business-stock-service
   # 参考：https://seata.io/zh-cn/docs/user/configurations.html 附录1
   tx-service-group: my_test_tx_group # 事务群组（可以每个应用独立取名，也可以使用相同的名字）
   client:
