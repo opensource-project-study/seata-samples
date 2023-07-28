@@ -20,15 +20,15 @@ mybatis:
 #====================================Dubbo config===============================================
 dubbo:
   application:
-    id: dubbo-account-example
-    name: dubbo-account-example
+    id: business-account-service
+    name: business-account-service
     qosEnable: false
   protocol:
     id: dubbo
     name: dubbo
     port: 20883
   registry:
-    id: dubbo-account-example-registry
+    id: business-account-service
     address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183
   config-center:
     address: zookeeper://192.168.3.129:2181,192.168.3.129:2182,192.168.3.129:2183

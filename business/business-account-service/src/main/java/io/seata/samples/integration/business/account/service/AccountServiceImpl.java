@@ -13,7 +13,7 @@ import org.apache.dubbo.config.annotation.DubboService;
  * @author yyuweb@outlook.com
  * @date 2023/7/28
  */
-@DubboService
+@DubboService(version = "1.0.0")
 public class AccountServiceImpl implements AccountService {
 
     @Resource
