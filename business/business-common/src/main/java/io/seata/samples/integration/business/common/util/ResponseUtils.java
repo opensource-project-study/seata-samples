@@ -1,7 +1,7 @@
 package io.seata.samples.integration.business.common.util;
 
 import io.seata.samples.integration.business.common.enums.ResponseCodeMsg;
-import io.seata.samples.integration.business.common.model.ResponseModel;
+import io.seata.samples.integration.business.common.vo.ResponseVO;
 
 /**
  * @author yyuweb@outlook.com
@@ -12,20 +12,20 @@ public class ResponseUtils {
     private ResponseUtils() {
     }
 
-    public static <T> ResponseModel<T> success() {
+    public static <T> ResponseVO<T> success() {
         return success(null);
     }
 
-    public static <T> ResponseModel<T> success(T data) {
+    public static <T> ResponseVO<T> success(T data) {
         return buildResponse(ResponseCodeMsg.SUCCESS.getCode(), ResponseCodeMsg.SUCCESS.getMessage(), data);
     }
 
-    public static ResponseModel<Object> fail() {
+    public static ResponseVO<Object> fail() {
         return buildResponse(ResponseCodeMsg.FAIL.getCode(), ResponseCodeMsg.FAIL.getMessage(), null);
     }
 
-    private static <T> ResponseModel<T> buildResponse(int code, String message, T data) {
-        ResponseModel<T> response = new ResponseModel<>();
+    private static <T> ResponseVO<T> buildResponse(int code, String message, T data) {
+        ResponseVO<T> response = new ResponseVO<>();
         response.setCode(code);
         response.setMessage(message);
         response.setData(data);

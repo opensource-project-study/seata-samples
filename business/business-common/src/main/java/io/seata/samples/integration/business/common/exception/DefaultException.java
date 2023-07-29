@@ -29,6 +29,10 @@ public class DefaultException extends RuntimeException {
 
     private ResponseCodeMsg responseCodeMsg;
 
+    public DefaultException(String message) {
+        super(message);
+    }
+
     public DefaultException(String message, Throwable cause) {
         super(message, cause);
     }

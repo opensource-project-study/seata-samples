@@ -16,7 +16,7 @@
 package io.seata.samples.integration.business.common.config;
 
 import io.seata.samples.integration.business.common.exception.DefaultException;
-import io.seata.samples.integration.business.common.model.ResponseModel;
+import io.seata.samples.integration.business.common.vo.ResponseVO;
 import io.seata.samples.integration.business.common.util.ResponseUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -37,14 +37,14 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public ResponseModel<Object> exceptionHandler(Exception e) {
+    public ResponseVO<Object> exceptionHandler(Exception e) {
         LOGGER.error("[系统抛出{}异常] ", e.getClass().getSimpleName(), e);
         return ResponseUtils.fail();
     }
 
     @ExceptionHandler(DefaultException.class)
     @ResponseBody
-    public ResponseModel<Object> defaultException(DefaultException e) {
+    public ResponseVO<Object> defaultException(DefaultException e) {
         LOGGER.error("[系统抛出{}异常] ", e.getClass().getSimpleName(), e);
         return ResponseUtils.fail();
     }

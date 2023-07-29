@@ -2,8 +2,9 @@ package io.seata.samples.integration.business.at;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
 public class BusinessAtApplication {
 
     public static void main(String[] args) {
