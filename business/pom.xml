@@ -26,9 +26,9 @@
         <module>business-account-service</module>
         <module>business-order-service</module>
         <module>business-stock-service</module>
-        <module>business-at</module>
-        <module>business-tcc</module>
-        <module>business-soga</module>
+        <module>business-seata-at</module>
+        <module>business-seata-tcc</module>
+        <module>business-seata-soga</module>
         <module>business-seata-xa</module>
     </modules>
 

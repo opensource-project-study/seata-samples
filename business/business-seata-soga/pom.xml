@@ -7,9 +7,9 @@
         <groupId>io.seata</groupId>
         <version>1.1.0</version>
     </parent>
-    <artifactId>business-soga</artifactId>
-    <name>business-soga</name>
-    <description>business-soga</description>
+    <artifactId>business-seata-soga</artifactId>
+    <name>business-seata-soga</name>
+    <description>business-seata-soga</description>
 
     <properties>
         <java.version>1.8</java.version>

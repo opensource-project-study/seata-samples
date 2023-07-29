@@ -7,9 +7,9 @@
         <groupId>io.seata</groupId>
         <version>1.1.0</version>
     </parent>
-    <artifactId>business-tcc</artifactId>
-    <name>business-tcc</name>
-    <description>business-tcc</description>
+    <artifactId>business-seata-at</artifactId>
+    <name>business-seata-at</name>
+    <description>business-seata-at</description>
 
     <properties>
         <java.version>1.8</java.version>
