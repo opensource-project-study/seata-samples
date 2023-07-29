@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderComponent {
 
-    @DubboReference
+    @DubboReference(version = "1.0.0")
     private AccountService accountService;
 
     @Resource
