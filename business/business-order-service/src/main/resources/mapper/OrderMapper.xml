@@ -15,6 +15,7 @@
         id, order_no, user_id, commodity_code, count, amount
     </sql>
 
+    <!-- order是MySQL中的一个关键字，需要用反引号引起来 -->
     <insert id="createOrder" keyProperty="id" useGeneratedKeys="true"
             parameterType="io.seata.samples.integration.business.common.bean.Order">
         insert into `order`
