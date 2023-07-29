@@ -17,7 +17,7 @@
 
     <insert id="createOrder" keyProperty="id" useGeneratedKeys="true"
             parameterType="io.seata.samples.integration.business.common.bean.Order">
-        insert into order
+        insert into `order`
         (order_no, user_id, commodity_code, count, amount)
         values
         (#{orderNo}, #{userId}, #{commodityCode}, #{count}, #{amount})
