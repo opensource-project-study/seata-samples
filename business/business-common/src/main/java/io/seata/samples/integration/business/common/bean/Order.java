@@ -13,6 +13,8 @@ public class Order {
     private String orderNo;
     private String userId;
     private String commodityCode;
+    /** 商品数量 */
     private Integer count;
+    /** 订单金额 */
     private Integer amount;
 }
