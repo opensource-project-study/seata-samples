@@ -21,29 +21,26 @@ import io.seata.samples.integration.business.common.util.ResponseUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
  * 全局异常处理
  * @author yyuweb@outlook.com
  */
 @Slf4j
-@ControllerAdvice(basePackages = "io.seata.samples.integration.business")
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(Exception.class)
-    @ResponseBody
     public ResponseVO<Object> exceptionHandler(Exception e) {
         LOGGER.error("[系统抛出{}异常] ", e.getClass().getSimpleName(), e);
         return ResponseUtils.fail();
     }
 
     @ExceptionHandler(DefaultException.class)
-    @ResponseBody
     public ResponseVO<Object> defaultException(DefaultException e) {
         LOGGER.error("[系统抛出{}异常] ", e.getClass().getSimpleName(), e);
         return ResponseUtils.fail();
