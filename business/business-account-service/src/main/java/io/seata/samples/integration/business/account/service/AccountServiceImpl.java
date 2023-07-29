@@ -2,11 +2,13 @@ package io.seata.samples.integration.business.account.service;
 
 import javax.annotation.Resource;
 
-import io.seata.samples.integration.business.account.component.AccountComponent;
+import io.seata.samples.integration.business.account.biz.AccountAtBiz;
+import io.seata.samples.integration.business.account.biz.AccountSogaBiz;
+import io.seata.samples.integration.business.account.biz.AccountTccBiz;
+import io.seata.samples.integration.business.account.biz.AccountXaBiz;
 import io.seata.samples.integration.business.common.enums.ResponseCodeMsg;
 import io.seata.samples.integration.business.common.model.AccountParam;
 import io.seata.samples.integration.business.common.service.AccountService;
-
 import org.apache.dubbo.config.annotation.DubboService;
 
 /**
@@ -17,10 +19,16 @@ import org.apache.dubbo.config.annotation.DubboService;
 public class AccountServiceImpl implements AccountService {
 
     @Resource
-    private AccountComponent accountComponent;
+    private AccountAtBiz accountAtBiz;
+    @Resource
+    private AccountTccBiz accountTccBiz;
+    @Resource
+    private AccountSogaBiz accountSogaBiz;
+    @Resource
+    private AccountXaBiz accountXaBiz;
 
     @Override
     public ResponseCodeMsg decreaseAccount(AccountParam param) {
-        return accountComponent.decreaseAccount(param);
+        return accountAtBiz.decreaseAccount(param);
     }
 }

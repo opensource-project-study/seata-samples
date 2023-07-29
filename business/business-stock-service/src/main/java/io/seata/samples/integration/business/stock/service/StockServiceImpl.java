@@ -5,8 +5,7 @@ import javax.annotation.Resource;
 import io.seata.samples.integration.business.common.enums.ResponseCodeMsg;
 import io.seata.samples.integration.business.common.model.StockParam;
 import io.seata.samples.integration.business.common.service.StockService;
-import io.seata.samples.integration.business.stock.component.StockComponent;
-
+import io.seata.samples.integration.business.stock.biz.StockAtBiz;
 import org.apache.dubbo.config.annotation.DubboService;
 
 /**
@@ -17,10 +16,10 @@ import org.apache.dubbo.config.annotation.DubboService;
 public class StockServiceImpl implements StockService {
 
     @Resource
-    private StockComponent stockComponent;
+    private StockAtBiz stockAtBiz;
 
     @Override
     public ResponseCodeMsg decreaseStock(StockParam param) {
-        return stockComponent.decreaseStock(param);
+        return stockAtBiz.decreaseStock(param);
     }
 }
