@@ -34,8 +34,8 @@
 
     <update id="updateOrderStatus">
         UPDATE `order`
-        SET order_status=#{orderStatus}
-        WHERE order_no=#{orderNo} AND order_status=#{orderStatus}
+        SET order_status=#{newStatus}
+        WHERE order_no=#{orderNo} AND order_status=#{oldStatus}
     </update>
 
 </mapper>

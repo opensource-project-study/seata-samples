@@ -14,6 +14,6 @@ public interface OrderMapper {
 
     int createOrder(Order order);
 
-    int updateOrderStatus(@Param("orderNo") String orderNo, @Param("orderStatus") int orderStatus, @Param("oldStatus") int oldStatus);
+    int updateOrderStatus(@Param("orderNo") String orderNo, @Param("newStatus") int newStatus, @Param("oldStatus") int oldStatus);
 
 }
