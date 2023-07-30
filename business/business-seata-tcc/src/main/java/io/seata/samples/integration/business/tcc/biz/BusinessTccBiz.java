@@ -1,5 +1,7 @@
 package io.seata.samples.integration.business.tcc.biz;
 
+import java.util.UUID;
+
 import io.seata.core.context.RootContext;
 import io.seata.samples.integration.business.common.enums.ResponseCodeMsg;
 import io.seata.samples.integration.business.common.exception.DefaultException;
@@ -42,6 +44,7 @@ public class BusinessTccBiz {
         ResponseCodeMsg stockRsp = stockService.decreaseStockTcc(stockParam);
         // 2、创建订单
         OrderParam orderParam = new OrderParam();
+        orderParam.setOrderNo(UUID.randomUUID().toString().replace("-", ""));
         orderParam.setUserId(param.getUserId());
         orderParam.setCommodityCode(param.getCommodityCode());
         orderParam.setOrderCount(param.getCount());
