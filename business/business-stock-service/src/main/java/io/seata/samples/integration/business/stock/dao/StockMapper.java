@@ -12,12 +12,12 @@ public interface StockMapper {
 
     Stock getByUniqueKey(@Param("commodityCode") String commodityCode);
 
-    int updateFrozenCount(@Param("commodityCode") String commodityCode, @Param("count") Integer cnt);
+    int updateFrozenCount(@Param("commodityCode") String commodityCode, @Param("cnt") Integer cnt);
 
-    int update(@Param("commodityCode") String commodityCode, @Param("count") Integer cnt);
+    int update(@Param("commodityCode") String commodityCode, @Param("cnt") Integer cnt);
 
     /**
      * 扣减商品库存
      */
-    int decreaseStock(@Param("commodityCode") String commodityCode, @Param("count") Integer cnt);
+    int decreaseStock(@Param("commodityCode") String commodityCode, @Param("cnt") Integer cnt);
 }
