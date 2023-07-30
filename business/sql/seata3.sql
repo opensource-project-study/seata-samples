@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS `stock` (
     `commodity_code` varchar(255) NOT NULL DEFAULT '',
     `name` varchar(255) NOT NULL DEFAULT '',
     `count` int(11) NOT NULL DEFAULT 0,
+    `frozen_count` int(11) NOT NULL DEFAULT 0,
     PRIMARY KEY (`id`),
     UNIQUE KEY `commodity_code` (`commodity_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='库存表';
