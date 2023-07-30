@@ -13,4 +13,7 @@ public interface OrderService {
      * 创建订单
      */
     ResponseCodeMsg createOrder(OrderParam param);
+
+    ResponseCodeMsg createOrderTcc(OrderParam param);
+
 }

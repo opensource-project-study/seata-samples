@@ -13,4 +13,9 @@ public interface AccountService {
      * 从账户扣钱
      */
     ResponseCodeMsg decreaseAccount(AccountParam param);
+
+    /**
+     * 从账户扣钱，TCC模式
+     */
+    ResponseCodeMsg decreaseAccountTcc(AccountParam param);
 }

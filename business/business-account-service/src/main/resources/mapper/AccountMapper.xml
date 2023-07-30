@@ -6,11 +6,17 @@
         <id column="id" property="id"/>
         <result column="user_id" property="userId"/>
         <result column="amount" property="amount"/>
+        <result column="frozen_amount" property="frozenAmount" />
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, user_id, amount
+        id, user_id, amount, frozen_amount
     </sql>
+
+    <select id="getByUid" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM account WHERE user_id=#{userId} FOR UPDATE
+    </select>
 
     <select id="queryBalance" resultType="java.lang.Integer">
         SELECT amount from account WHERE user_id=#{userId} FOR UPDATE
@@ -19,6 +25,19 @@
     <update id="decreaseAccount">
         update account
         set amount = amount - ${amount}
+        where user_id = #{userId}
+    </update>
+
+    <update id="updateFrozenAmount">
+        update account
+        set frozen_amount=frozen_amount+#{amount}
+        where user_id = #{userId}
+    </update>
+
+    <update id="update">
+        update account
+        set amount=amount-#{amount},
+            frozen_amount=frozen_amount-#{amount}
         where user_id = #{userId}
     </update>
 

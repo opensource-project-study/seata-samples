@@ -13,4 +13,10 @@ public interface StockService {
      * 扣减库存
      */
     ResponseCodeMsg decreaseStock(StockParam param);
+
+    /**
+     * TCC模式调用
+     */
+    ResponseCodeMsg decreaseStockTcc(StockParam param);
+
 }

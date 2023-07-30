@@ -31,4 +31,9 @@ public class AccountServiceImpl implements AccountService {
     public ResponseCodeMsg decreaseAccount(AccountParam param) {
         return accountAtBiz.decreaseAccount(param);
     }
+
+    @Override
+    public ResponseCodeMsg decreaseAccountTcc(AccountParam param) {
+        return accountTccBiz.prepare(null, param);
+    }
 }

@@ -1,5 +1,7 @@
 package io.seata.samples.integration.business.stock.dao;
 
+import io.seata.samples.integration.business.common.bean.Stock;
+
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -8,10 +10,14 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface StockMapper {
 
-    int queryStockByUniqueKey(@Param("commodityCode") String commodityCode);
+    Stock getByUniqueKey(@Param("commodityCode") String commodityCode);
+
+    int updateFrozenCount(@Param("commodityCode") String commodityCode, @Param("count") Integer cnt);
+
+    int update(@Param("commodityCode") String commodityCode, @Param("count") Integer cnt);
 
     /**
      * 扣减商品库存
      */
-    int decreaseStock(@Param("commodityCode") String commodityCode, @Param("count") Integer count);
+    int decreaseStock(@Param("commodityCode") String commodityCode, @Param("count") Integer cnt);
 }

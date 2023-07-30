@@ -2,6 +2,7 @@ package io.seata.samples.integration.business.stock.component;
 
 import javax.annotation.Resource;
 
+import io.seata.samples.integration.business.common.bean.Stock;
 import io.seata.samples.integration.business.common.enums.ResponseCodeMsg;
 import io.seata.samples.integration.business.common.model.StockParam;
 import io.seata.samples.integration.business.stock.dao.StockMapper;
@@ -21,8 +22,8 @@ public class StockComponent {
     private StockMapper stockMapper;
 
     public ResponseCodeMsg decreaseStock(StockParam param) {
-        int stock = stockMapper.queryStockByUniqueKey(param.getCommodityCode());
-        if (stock < param.getCount()) {
+        Stock stock = stockMapper.getByUniqueKey(param.getCommodityCode());
+        if (stock.getCount() - stock.getFrozenCount() < param.getCount()) {
             log.error("商品库存{}不足，param={}", stock, param);
             return ResponseCodeMsg.FAIL;
         }

@@ -7,19 +7,33 @@
         <result column="commodity_code" property="commodityCode"/>
         <result column="name" property="name"/>
         <result column="count" property="count"/>
+        <result column="frozen_count" property="frozenCount" />
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, commodity_code, name, count
+        id, commodity_code, `name`, `count`, frozen_count
     </sql>
 
-    <select id="queryStockByUniqueKey" resultType="java.lang.Integer">
-        SELECT count from stock where commodity_code = #{commodityCode} FOR UPDATE
+    <select id="getByUniqueKey" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> from stock where commodity_code = #{commodityCode} FOR UPDATE
     </select>
+
+    <update id="updateFrozenCount">
+        UPDATE stock
+        SET frozen_count=frozen_count+#{cnt}
+        WHERE commodity_code = #{commodityCode}
+    </update>
+
+    <update id="update">
+        UPDATE stock
+        SET `count`=`count`-#{cnt}
+            frozen_count=frozen_count-#{cnt}
+        WHERE commodity_code = #{commodityCode}
+    </update>
 
     <update id="decreaseStock">
         update stock
-        set count = count - ${count}
+        set count = count - #{cnt}
         where commodity_code = #{commodityCode}
     </update>
 
