@@ -13,12 +13,12 @@ public enum OrderStatus {
 
     /** 初始状态 */
     INIT(0),
-    /** 订单取消 */
-    CANCEL(1),
-    /** 订单删除 */
-    DELETE(2),
-    /** 订单成功 */
-    SUCCESS(3)
+    /** 成功状态 */
+    SUCCESS(1),
+    /** 取消状态 */
+    CANCEL(2),
+    /** 删除状态 */
+    DELETE(3)
     ;
 
     private final int code;

@@ -4,8 +4,9 @@ USE seata1;
 
 CREATE TABLE IF NOT EXISTS `account` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
-    `user_id` varchar(255) DEFAULT NULL,
-    `amount` int(11) DEFAULT 0,
+    `user_id` varchar(255) NOT NULL DEFAULT '',
+    `amount` int(11) NOT NULL DEFAULT 0,
+    `frozen_amount` int(11) NOT NULL DEFAULT 0,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='账户表';
 

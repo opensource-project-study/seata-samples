@@ -11,5 +11,8 @@ public class Account {
 
     private Integer id;
     private String userId;
-    private Double amount;
+    /** 账户金额 */
+    private Integer amount;
+    /** 冻结金额 */
+    private Integer frozenAmount;
 }

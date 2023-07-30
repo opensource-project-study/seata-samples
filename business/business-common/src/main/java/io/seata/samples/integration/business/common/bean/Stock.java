@@ -12,5 +12,8 @@ public class Stock {
     private Integer id;
     private String commodityCode;
     private String name;
+    /** 库存 */
     private Integer count;
+    /** 冻结库存 */
+    private Integer frozenCount;
 }
