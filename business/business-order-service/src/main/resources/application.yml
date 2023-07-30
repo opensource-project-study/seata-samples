@@ -1,9 +1,9 @@
 server:
   port: 8102
 
-logging:
-  level:
-    io.seata.samples.integration: DEBUG
+#logging:
+#  level:
+#    io.seata.samples.integration: DEBUG
 #====================================MySQL=============================================
 spring:
   datasource:
