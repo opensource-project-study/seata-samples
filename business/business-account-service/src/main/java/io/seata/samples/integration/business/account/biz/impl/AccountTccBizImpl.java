@@ -30,7 +30,7 @@ public class AccountTccBizImpl implements AccountTccBiz {
         }
 
         if (accountFrom.getAmount() - accountFrom.getFrozenAmount() < param.getAmount()) {
-            throw new DefaultException(String.format("账户余额不足，account={},param={}", accountFrom, param));
+            throw new DefaultException(String.format("账户余额不足，account=%s,param=%s", accountFrom, param));
         }
 
         // 冻结金额

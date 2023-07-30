@@ -26,11 +26,11 @@ public class StockTccBizImpl implements StockTccBiz {
     public ResponseCodeMsg prepare(BusinessActionContext businessActionContext, StockParam param) {
         Stock stock = stockMapper.getByUniqueKey(param.getCommodityCode());
         if (stock == null) {
-            throw new DefaultException(String.format("商品[{}]不存在", param.getCommodityCode()));
+            throw new DefaultException(String.format("商品[%s]不存在", param.getCommodityCode()));
         }
 
         if (stock.getCount() - stock.getFrozenCount() < param.getCount()) {
-            throw new DefaultException(String.format("库存[{}]不足，param=[{}]", stock, param));
+            throw new DefaultException(String.format("库存[%s]不足，param=[%s]", stock, param));
         }
 
         // 冻结库存
