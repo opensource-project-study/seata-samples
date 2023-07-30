@@ -26,7 +26,7 @@
 
     <update id="update">
         UPDATE stock
-        SET `count`=`count`-#{cnt}
+        SET `count`=`count`-#{cnt},
             frozen_count=frozen_count-#{cnt}
         WHERE commodity_code = #{commodityCode}
     </update>
