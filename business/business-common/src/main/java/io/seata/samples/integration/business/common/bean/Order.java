@@ -1,5 +1,7 @@
 package io.seata.samples.integration.business.common.bean;
 
+import java.util.Date;
+
 import lombok.Data;
 
 /**
@@ -19,4 +21,6 @@ public class Order {
     private Integer count;
     /** 订单金额 */
     private Integer amount;
+    private Date createdAt;
+    private Date updatedAt;
 }
