@@ -32,7 +32,7 @@ public class BusinessTccBiz {
     private OrderService orderService;
 
     /**
-     * 处理业务逻辑 正常的业务逻辑
+     * 处理业务逻辑
      */
     @GlobalTransactional(timeoutMills = 300000, name = "gts-business-seata-tcc")
     public ResponseVO<Object> handleBusiness(BusinessParam param) {
@@ -55,6 +55,7 @@ public class BusinessTccBiz {
             throw new DefaultException(ResponseCodeMsg.FAIL);
         }
 
+        // 只用于测试分布式事务回滚
         if (param.isRollback()) {
             throw new DefaultException("出现异常，分布式事务回滚！！！");
         }
