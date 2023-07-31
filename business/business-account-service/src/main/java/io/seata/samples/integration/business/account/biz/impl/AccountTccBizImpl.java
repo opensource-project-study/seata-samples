@@ -26,10 +26,10 @@ public class AccountTccBizImpl implements AccountTccBiz {
     public ResponseCodeMsg prepare(BusinessActionContext businessActionContext, AccountParam param) {
         Account accountFrom = accountMapper.getByUid(param.getUserId());
         if (accountFrom == null) {
-            throw new DefaultException("账户不存在！！！");
+            throw new DefaultException(String.format("账户[%s]不存在！！！", param.getUserId()));
         }
 
-        if (accountFrom.getAmount() - accountFrom.getFrozenAmount() < param.getAmount()) {
+        if (accountFrom.getAmount() < param.getAmount()) {
             throw new DefaultException(String.format("账户余额不足，account=%s,param=%s", accountFrom, param));
         }
 

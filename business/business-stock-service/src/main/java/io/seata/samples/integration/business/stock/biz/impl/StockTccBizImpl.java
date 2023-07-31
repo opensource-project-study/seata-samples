@@ -30,7 +30,7 @@ public class StockTccBizImpl implements StockTccBiz {
         }
 
         if (stock.getCount() < param.getCount()) {
-            throw new DefaultException(String.format("库存不足，stock=[%s],param=[%s]", stock, param));
+            throw new DefaultException(String.format("库存不足，stock=%s,param=%s", stock, param));
         }
 
         // 冻结库存，也就是说从库存里拿出一部分库存，将其加到冻结库存里；即减少库存，增加冻结库存
