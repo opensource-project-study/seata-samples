@@ -108,7 +108,7 @@ public class FirstTccActionImpl implements FirstTccAction {
                     //扣除账户余额
                     double newAmount = account.getAmount() - amount;
                     // 在confirm阶段为什么还要进行资源的检查呢？根据TCC的模型，应该直接使用资源。
-                    // 如果confirm阶段抛出异常，confirm方法会重试，而不是事物回滚，那么这里抛出异常的意义是什么？
+                    // 如果confirm阶段抛出异常，confirm方法会重试，而不是事务回滚，那么这里抛出异常的意义是什么？
                     /** {@link TCCResourceManager#branchCommit} */
                     if (newAmount < 0) {
                         throw new RuntimeException("余额不足");
