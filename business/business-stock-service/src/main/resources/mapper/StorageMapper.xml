@@ -14,20 +14,20 @@
         id, commodity_code, `name`, `count`, frozen_count
     </sql>
 
-    <select id="getByUniqueKey" resultMap="BaseResultMap">
+    <select id="queryStockForUpdate" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List"/> from stock where commodity_code = #{commodityCode} FOR UPDATE
     </select>
 
     <update id="updateFrozenCount">
         UPDATE stock
-        SET frozen_count=frozen_count+#{cnt}
+        SET frozen_count=frozen_count-#{cnt}
         WHERE commodity_code = #{commodityCode}
     </update>
 
     <update id="update">
         UPDATE stock
         SET `count`=`count`-#{cnt},
-            frozen_count=frozen_count-#{cnt}
+            frozen_count=frozen_count+#{cnt}
         WHERE commodity_code = #{commodityCode}
     </update>
 

@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface StockMapper {
 
-    Stock getByUniqueKey(@Param("commodityCode") String commodityCode);
+    Stock queryStockForUpdate(@Param("commodityCode") String commodityCode);
 
     int updateFrozenCount(@Param("commodityCode") String commodityCode, @Param("cnt") Integer cnt);
 

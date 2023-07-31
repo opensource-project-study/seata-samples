@@ -30,14 +30,14 @@
 
     <update id="updateFrozenAmount">
         update account
-        set frozen_amount=frozen_amount+#{amount}
+        set frozen_amount=frozen_amount-#{amount}
         where user_id = #{userId}
     </update>
 
     <update id="update">
         update account
         set amount=amount-#{amount},
-            frozen_amount=frozen_amount-#{amount}
+            frozen_amount=frozen_amount+#{amount}
         where user_id = #{userId}
     </update>
 

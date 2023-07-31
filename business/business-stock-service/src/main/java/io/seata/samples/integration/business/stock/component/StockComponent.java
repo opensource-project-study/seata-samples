@@ -22,7 +22,7 @@ public class StockComponent {
     private StockMapper stockMapper;
 
     public ResponseCodeMsg decreaseStock(StockParam param) {
-        Stock stock = stockMapper.getByUniqueKey(param.getCommodityCode());
+        Stock stock = stockMapper.queryStockForUpdate(param.getCommodityCode());
         if (stock.getCount() - stock.getFrozenCount() < param.getCount()) {
             log.error("商品库存{}不足，param={}", stock, param);
             return ResponseCodeMsg.FAIL;
