@@ -3,7 +3,7 @@ package io.seata.samples.integration.business.account.service;
 import javax.annotation.Resource;
 
 import io.seata.samples.integration.business.account.biz.AccountAtBiz;
-import io.seata.samples.integration.business.account.biz.AccountSogaBiz;
+import io.seata.samples.integration.business.account.biz.AccountSagaBiz;
 import io.seata.samples.integration.business.account.biz.AccountTccBiz;
 import io.seata.samples.integration.business.account.biz.AccountXaBiz;
 import io.seata.samples.integration.business.common.enums.ResponseCodeMsg;
@@ -23,7 +23,7 @@ public class AccountServiceImpl implements AccountService {
     @Resource
     private AccountTccBiz accountTccBiz;
     @Resource
-    private AccountSogaBiz accountSogaBiz;
+    private AccountSagaBiz accountSagaBiz;
     @Resource
     private AccountXaBiz accountXaBiz;
 

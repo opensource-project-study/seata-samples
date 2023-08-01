@@ -1,4 +1,4 @@
-package io.seata.samples.integration.business.stock.biz;
+package io.seata.samples.integration.business.order.biz;
 
 import org.springframework.stereotype.Service;
 
@@ -7,4 +7,4 @@ import org.springframework.stereotype.Service;
  * @date 2023/7/29
  */
 @Service
-public class StockSogaBiz {}
+public class OrderSagaBiz {}
