@@ -28,7 +28,7 @@
         <module>business-stock-service</module>
         <module>business-seata-at</module>
         <module>business-seata-tcc</module>
-        <module>business-seata-soga</module>
+        <module>business-seata-saga</module>
         <module>business-seata-xa</module>
     </modules>
 
