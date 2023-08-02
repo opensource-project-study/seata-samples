@@ -1,4 +1,4 @@
-package io.seata.samples.integration.business.soga;
+package io.seata.samples.integration.business.saga;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

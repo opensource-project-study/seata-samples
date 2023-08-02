@@ -1,4 +1,4 @@
-package io.seata.samples.integration.business.soga;
+package io.seata.samples.integration.business.saga;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
