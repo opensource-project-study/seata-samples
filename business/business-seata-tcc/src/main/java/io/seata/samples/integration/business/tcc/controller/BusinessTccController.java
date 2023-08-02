@@ -24,7 +24,7 @@ public class BusinessTccController {
     /**
      * 下单正常流程
      * <p>用ab命令模拟并发请求：ab -n 100 -c 10 -p data.txt -T application/json localhost:8111/business/seata/tcc/buy
-     * <p>data.txt文件中的内容写请求参数，如{"userId":"1","commodityCode":"C001","name":"图书","count":50,"amount":"100"}
+     * <p>data.txt文件中的内容写请求参数，如{"userId":"1","commodityCode":"C001","name":"图书","count":50,"amount":100}
      */
     @RequestMapping("/buy")
     public ResponseVO<Object> buy(@RequestBody BusinessParam param) {

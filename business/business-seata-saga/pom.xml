@@ -7,7 +7,7 @@
         <groupId>io.seata</groupId>
         <version>1.1.0</version>
     </parent>
-    <artifactId>business-seata-soga</artifactId>
+    <artifactId>business-seata-saga</artifactId>
     <name>business-seata-saga</name>
     <description>business-seata-saga</description>
 

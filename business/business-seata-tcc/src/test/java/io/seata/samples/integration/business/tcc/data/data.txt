@@ -1,1 +1,1 @@
-{"userId":"1","commodityCode":"C001","name":"图书","count":50,"amount":"100"}
+{"userId":"1","commodityCode":"C001","name":"图书","count":50,"amount":100}
