@@ -18,16 +18,12 @@ package io.seata.samples.saga;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.support.AbstractApplicationContext;
 
 /**
  * The type Application keeper.
  */
 public class ApplicationKeeper {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationKeeper.class);
 
     private final ReentrantLock LOCK = new ReentrantLock();
     private final Condition STOP = LOCK.newCondition();
@@ -47,9 +43,9 @@ public class ApplicationKeeper {
             public void run() {
                 try {
                     applicationContext.close();
-                    LOGGER.info("ApplicationContext " + applicationContext + " is closed.");
+                    System.out.println("ApplicationContext " + applicationContext + " is closed.");
                 } catch (Exception e) {
-                    LOGGER.error("Failed to close ApplicationContext", e);
+                    System.out.println("Failed to close ApplicationContext" + e);
                 }
 
                 try {
@@ -68,7 +64,7 @@ public class ApplicationKeeper {
     public void keep() {
         synchronized (LOCK) {
             try {
-                LOGGER.info("Application is keep running ... ");
+                System.out.println("Application is keep running ... ");
                 LOCK.wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();

@@ -43,7 +43,7 @@ public class DubboSagaTransactionStarter {
 
         transactionCommittedDemo(stateMachineEngine);
 
-        transactionCompensatedDemo(stateMachineEngine);
+//        transactionCompensatedDemo(stateMachineEngine);
 
         new ApplicationKeeper(applicationContext).keep();
     }
